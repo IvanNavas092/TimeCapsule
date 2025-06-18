@@ -13,7 +13,6 @@ export default function Particle() {
     });
   }, []);
 
-
   return (
     <>
       {init && (
@@ -40,7 +39,7 @@ export default function Particle() {
                   quantity: 4,
                 },
                 repulse: {
-                  distance: 200,
+                  distance: 100,
                   duration: 0.4,
                 },
               },
@@ -63,7 +62,7 @@ export default function Particle() {
                   default: "bounce",
                 },
                 random: false,
-                speed: 1,
+                speed: 0.3,
                 straight: false,
               },
               number: {
