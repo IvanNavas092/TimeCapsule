@@ -1,54 +1,25 @@
-# React + TypeScript + Vite
+🚀 Time capsule  — Tu historia, sellada en el tiempo.
+Capsulæ es una plataforma web donde los usuarios pueden crear cápsulas del tiempo digitales, programarlas para abrirse en el futuro, y compartirlas con otros… o mantenerlas en secreto hasta el día exacto.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Inspirada en el misterio del universo, la estética oscura del vacío espacial, y el deseo humano de trascender el presente, Capsulæ es más que una app: es un ritual personal para enviar un mensaje al mañana.
 
-Currently, two official plugins are available:
+✨ Características principales
+🔒 Crea tu cápsula: Escribe mensajes, sube archivos o graba audio/video.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+⏳ Programa su apertura: Elige una fecha futura (días, meses o años).
 
-## Expanding the ESLint configuration
+🛰️ Comparte o guarda en privado: Decide si será un secreto personal o un regalo para alguien más.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🌌 Ambientación espacial: Estética inspirada en el cosmos, con tonos oscuros, metálicos y animaciones sutiles.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+🚀 Visión
+“Sellar un fragmento de ti mismo en el tiempo. Y volver a encontrarte.”
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Capsulæ no es solo una herramienta digital: es un espacio emocional donde cada cápsula es una promesa, un recuerdo o un misterio esperando ser revelado.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+📂 Tecnologías 
+Frontend: React
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Backend: .NET
+
+Diseño: Tailwind
