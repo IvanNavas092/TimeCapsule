@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 
 import { loadFull } from "tsparticles";
+
 export default function Particle() {
   const [init, setInit] = useState(false);
   useEffect(() => {
@@ -39,7 +40,7 @@ export default function Particle() {
                   quantity: 4,
                 },
                 repulse: {
-                  distance: 100,
+                  distance: 50,
                   duration: 0.4,
                 },
               },
@@ -62,23 +63,28 @@ export default function Particle() {
                   default: "bounce",
                 },
                 random: false,
-                speed: 0.3,
+                speed: 0.08,
                 straight: false,
               },
               number: {
                 density: {
                   enable: true,
                 },
-                value: 100,
+                value: 180,
               },
               opacity: {
-                value: 0.7,
+                value: { min: 0, max: 1 },
+                animation: {
+                  enable: true,
+                  speed: 0.3,
+                  sync: false,
+                },
               },
               shape: {
                 type: "circle",
               },
               size: {
-                value: { min: 1, max: 5 },
+                value: { min: 1, max: 3 },
               },
             },
             detectRetina: true,
