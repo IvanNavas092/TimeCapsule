@@ -13,15 +13,12 @@ export default function Particle() {
     });
   }, []);
 
-  const particlesLoaded = (container) => {
-  };
 
   return (
     <>
       {init && (
         <Particles
           id="tsparticles"
-          particlesLoaded={particlesLoaded}
           style={{
             zIndex: 1,
           }}
@@ -72,7 +69,6 @@ export default function Particle() {
               number: {
                 density: {
                   enable: true,
-                  area: 800,
                 },
                 value: 100,
               },
