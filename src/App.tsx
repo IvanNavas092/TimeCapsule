@@ -1,13 +1,11 @@
-import './App.css'
-import { Hero } from './components/hero'
+import { Hero } from "./components/hero";
 
 function App() {
-
   return (
     <>
       <Hero />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
