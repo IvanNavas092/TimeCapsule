@@ -73,7 +73,12 @@ export default function Particle() {
                 value: 180,
               },
               opacity: {
-                value: { min: 0.3, max: 0.8 },
+                value: { min: 0, max: 1 },
+                animation: {
+                  enable: true,
+                  speed: 0.3,
+                  sync: false,
+                },
               },
               shape: {
                 type: "circle",
