@@ -9,7 +9,7 @@ export function Hero() {
       <div className=" relative grid grid-cols-2 h-full place-items-center">
         <div className="flex flex-col p-16 w-4xl text-wrap">
           <p className="text-white text-6xl font-bold  text-center ml-20 ">
-            Crea tu experiencia espacial con tu propia cápsula
+            Captura el presente, despierta el futuro.
           </p>
         </div>
         <div className="flex flex-col items-center justify-center">
