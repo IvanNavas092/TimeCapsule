@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { useEffect, useState } from 'react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
 
-import { loadFull } from "tsparticles";
+import { loadFull } from 'tsparticles';
 
 export default function Particle() {
   const [init, setInit] = useState(false);
   useEffect(() => {
-    console.log("init");
+    console.log('init');
     initParticlesEngine(async (engine) => {
       await loadFull(engine);
     }).then(() => {
@@ -26,20 +26,20 @@ export default function Particle() {
             fpsLimit: 160,
             particles: {
               color: {
-                value: "#ffff",
+                value: '#ffff',
               },
               links: {
-                color: "#fff",
+                color: '#fff',
                 distance: 150,
                 enable: false,
                 opacity: 0.5,
                 width: 1,
               },
               move: {
-                direction: "none",
+                direction: 'none',
                 enable: true,
                 outModes: {
-                  default: "bounce",
+                  default: 'bounce',
                 },
                 random: true,
                 speed: 0.08,
@@ -60,7 +60,7 @@ export default function Particle() {
                 },
               },
               shape: {
-                type: "circle",
+                type: 'circle',
               },
               size: {
                 value: { min: 0.5, max: 1.1 },
