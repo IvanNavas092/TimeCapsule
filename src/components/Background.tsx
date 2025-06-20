@@ -26,17 +26,14 @@ export default function Particle() {
             fpsLimit: 120,
             interactivity: {
               events: {
-                onHover: {
-                  enable: true,
-                  mode: "repulse",
-                },
+                
               },
               modes: {
                 push: {
                   quantity: 4,
                 },
                 repulse: {
-                  distance: 50,
+                  distance: 100,
                   duration: 0.4,
                 },
               },
@@ -80,7 +77,7 @@ export default function Particle() {
                 type: "circle",
               },
               size: {
-                value: { min: 1, max: 3 },
+                value: { min: 0.5, max: 1},
               },
             },
             detectRetina: true,
