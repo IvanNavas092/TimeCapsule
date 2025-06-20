@@ -9,16 +9,12 @@ const Profile = () => {
 
   return (
     isAuthenticated && (
-      <div className="flex items-center gap-2 bg-[var(--color-tertiary)]/60 px-3 py-1 rounded-lg">
+      <div className="flex items-center gap-2 px-3 py-1 rounded-lg">
         <img
           src={user?.picture}
           alt={user?.name}
-          className="w-8 h-8 rounded-full border-2 border-amber-400 shadow"
+          className="w-8 h-8 rounded-full border-2 border-white shadow"
         />
-        <div className="flex flex-col">
-          <span className="text-white text-sm font-semibold leading-tight">{user?.name}</span>
-          <span className="text-gray-300 text-xs leading-tight">{user?.email}</span>
-        </div>
       </div>
     )
   );
