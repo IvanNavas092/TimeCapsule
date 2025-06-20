@@ -2,8 +2,9 @@ import Background from "./Background";
 
 export function Hero() {
   return (
+    <>
     <div className="bg-[var(--color-primary)] h-screen">
-      <div className="absolute inset-0 z-0">
+      <div className="relative inset-0 z-0">
         <Background />
       </div>
       <div className=" relative grid grid-cols-2 h-full place-items-center">
@@ -17,5 +18,7 @@ export function Hero() {
         </div>
       </div>
     </div>
+    
+    </>
   );
 }
