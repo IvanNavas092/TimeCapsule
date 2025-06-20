@@ -23,21 +23,7 @@ export default function Particle() {
             zIndex: 1,
           }}
           options={{
-            fpsLimit: 120,
-            interactivity: {
-              events: {
-                
-              },
-              modes: {
-                push: {
-                  quantity: 4,
-                },
-                repulse: {
-                  distance: 100,
-                  duration: 0.4,
-                },
-              },
-            },
+            fpsLimit: 160,
             particles: {
               color: {
                 value: "#ffff",
@@ -55,7 +41,7 @@ export default function Particle() {
                 outModes: {
                   default: "bounce",
                 },
-                random: false,
+                random: true,
                 speed: 0.08,
                 straight: false,
               },
@@ -63,10 +49,10 @@ export default function Particle() {
                 density: {
                   enable: true,
                 },
-                value: 180,
+                value: 200,
               },
               opacity: {
-                value: { min: 0, max: 1 },
+                value: { min: 0.03, max: 1 },
                 animation: {
                   enable: true,
                   speed: 0.3,
@@ -77,7 +63,7 @@ export default function Particle() {
                 type: "circle",
               },
               size: {
-                value: { min: 0.5, max: 1},
+                value: { min: 0.5, max: 1.1 },
               },
             },
             detectRetina: true,
