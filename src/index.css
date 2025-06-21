@@ -13,3 +13,32 @@
   --color-nonary: #8f8f90;
   --color-denary: #9f9f90;
 }
+
+
+/* fonts */
+/* opcion 1 */
+.special-gothic-expanded-one-regular {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight:400;
+  font-style: normal;
+}
+/* opcion 2 */
+.unbounded-regular {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.audiowide-regular {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gruppo-regular {
+  font-family: "Gruppo", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+

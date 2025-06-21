@@ -1,17 +1,8 @@
-import { useAuth0 } from '@auth0/auth0-react';
-
-const LoginButton = () => {
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
-
+export function Login() {
   return (
-    !isAuthenticated && (
-      <button
-        onClick={() => loginWithRedirect()}
-        className="px-4 py-2  hover:underline text-white font-semibold rounded-lg shadow transition-colors duration-200">
+    <button className="px-4 py-2  top-4 right-4 z-50 text-white font-semibold rounded-lg
+          cursor-pointer border hover:shadow-xl hover:shadow-slate-700 transition-all duration-100">
         Log In
       </button>
-    )
-  );
-};
-
-export default LoginButton;
+  )
+}
