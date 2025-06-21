@@ -1,6 +1,6 @@
 // import Background from '../layout/Background';
 import { BackgroundVideo } from '../layout/Background-video';
-
+// import Particle from '../layout/Background';
 export function Hero() {
   return (
     <>
@@ -9,8 +9,8 @@ export function Hero() {
           <BackgroundVideo />
         </div>
         <div className=" relative grid grid-cols-1 h-full place-items-center">
-          <div className="flex flex-col p-16 w-4xl text-wrap">
-            <h1 className="text-white text-7xl font-bold  text-center ml-20 ">
+          <div className="flex flex-col  w-4xl ">
+            <h1 className="text-white text-7xl font-bold text-center special-gothic-expanded-one-regular">
               Captura el presente, despierta el futuro.
             </h1>
           </div>
