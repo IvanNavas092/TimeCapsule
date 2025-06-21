@@ -1,5 +1,5 @@
 // import Background from '../layout/Background';
-import { BackgroundVideo } from '../layout/Background-video';
+import { BackgroundVideo } from '@/components/layout/Background-video';
 
 export function Hero() {
   return (
