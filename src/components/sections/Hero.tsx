@@ -1,11 +1,7 @@
 // import Background from '../layout/Background';
-<<<<<<< HEAD
-import { BackgroundVideo } from '@/components/layout/Background-video';
-
-=======
 import { BackgroundVideo } from '../layout/Background-video';
 // import Particle from '../layout/Background';
->>>>>>> main
+
 export function Hero() {
   return (
     <>
