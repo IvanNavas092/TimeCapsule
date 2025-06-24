@@ -4,8 +4,8 @@ interface LoginFormProps {
   onLogin: (e: React.FormEvent, login: string, password: string) => void;
   onRegister: (
     e: React.FormEvent,
-    firstName: string,
-    lastName: string,
+    name: string,
+    email: string,
     login: string,
     password: string
   ) => void;
@@ -15,8 +15,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onRegister }) => {
   const [activeTab, setActiveTab] = useState<'login' | 'register'>('login');
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onRegister }) => {
 
   const handleRegisterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onRegister(e, firstName, lastName, login, password);
+    onRegister(e, name, email, login, password);
   };
 
   return (
@@ -97,30 +97,30 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onRegister }) => {
         {activeTab === 'register' && (
           <form onSubmit={handleRegisterSubmit} className="space-y-6">
             <div>
-              <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                 First name
               </label>
               <input
                 type="text"
-                id="firstName"
-                name="firstName"
+                id="name"
+                name="name"
                 className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
             <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                 Last name
               </label>
               <input
                 type="text"
-                id="lastName"
-                name="lastName"
+                id="email"
+                name="email"
                 className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>

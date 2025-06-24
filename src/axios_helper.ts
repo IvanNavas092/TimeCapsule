@@ -22,7 +22,7 @@ export const request = <T = unknown>(
   let headers = {}
 
   if (getAuthToken() !== null && getAuthToken() !== 'null') {
-    headers = {'Authoritation': `Bearer ${getAuthToken()}`}
+    headers = {'Authorization': `Bearer ${getAuthToken()}`}
   }
 
   return axios({
