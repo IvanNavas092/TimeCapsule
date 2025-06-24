@@ -1,9 +1,11 @@
 import { createAuthClient } from 'better-auth/react';
+
 import { BETTER_AUTH_URL } from '@/utils/constants';
 
 export const authClient = createAuthClient({
-  /** The base URL of the server (optional if you're using the same domain) */
   baseURL: BETTER_AUTH_URL,
 });
 
-export const { signIn, signUp, useSession } = createAuthClient();
+export const { signOut, getSession, signIn, signUp, useSession } = createAuthClient({
+  baseURL: BETTER_AUTH_URL,
+});
