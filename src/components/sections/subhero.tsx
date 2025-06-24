@@ -3,7 +3,8 @@
 export function Subhero() {
   return (
     <>
-      <div className="bg-[var(--color-primary)] h-screen">hola</div>
+      <div className="z-10 relative h-screen">
+      </div>
     </>
   );
 }
