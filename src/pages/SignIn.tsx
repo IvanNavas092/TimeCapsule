@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import LoginForm from '@/components/auth/LoginForm';
-
+import { useNavigate } from 'react-router-dom';
 import { request, setAuthToken } from '@/axios_helper';
 
 export default function SignIn() {
   const [componentToShow, setComponentToShow] = useState<'login' | 'welcome' | 'messages'>('login');
+  const navigate = useNavigate();
 
   const onLogin = async (e: React.FormEvent, username: string, password: string) => {
     e.preventDefault();
@@ -16,7 +17,7 @@ export default function SignIn() {
         setAuthToken((response.data as { token: string }).token);
       });
 
-      setComponentToShow('messages');
+      navigate('/');
     } catch {
       setComponentToShow('welcome');
     }
@@ -24,23 +25,23 @@ export default function SignIn() {
 
   const onRegister = async (
     event: React.FormEvent,
-    firstName: string,
-    lastName: string,
+    name: string,
+    email: string,
     username: string,
     password: string
   ) => {
     event.preventDefault();
     try {
       await request('POST', '/register', {
-        firstName: firstName,
-        lastName: lastName,
+        name: name,
+        email: email,
         login: username,
         password: password,
       }).then((response) => {
         setAuthToken((response.data as { token: string }).token);
       });
 
-      setComponentToShow('messages');
+      navigate('/');
     } catch {
       setComponentToShow('welcome');
     }
