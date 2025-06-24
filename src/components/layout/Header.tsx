@@ -1,5 +1,4 @@
 import { Login } from '@/components/auth/Login';
-import { SignUp } from '../auth/SignUp';
 
 export function Header() {
   return (
@@ -9,7 +8,6 @@ export function Header() {
           TIME CAPSULE
         </h1>
         <Login />
-        <SignUp />
       </div>
     </header>
   );
