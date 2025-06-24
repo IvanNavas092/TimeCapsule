@@ -10,9 +10,9 @@ export function Login() {
   return (
     <button
       onClick={handleOnClick}
-      className="px-4 py-2  top-4 right-4 z-50 text-white font-semibold rounded-lg
-          cursor-pointer border hover:shadow-xl hover:shadow-slate-700 transition-all duration-100">
+      className="group relative px-4 py-2 text-white font-semibold cursor-pointer transition-all duration-100">
       Log In
+      <span className="absolute left-0 -bottom-0 w-0 h-[1px] bg-white transition-all duration-200 group-hover:w-full"></span>
     </button>
   );
 }
