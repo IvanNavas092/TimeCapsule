@@ -1,16 +1,11 @@
-import { Hero } from './components/sections/Hero';
-import { Header } from './components/layout/Header';
-import { Subhero } from './components/sections/subhero';
-import { BackgroundVideo } from './components/layout/Background-video';
+import AppRoutes from './routes/AppRoutes';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      <BackgroundVideo />
-      <Header />
-      <Hero />
-      <Subhero /> 
-    </>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 

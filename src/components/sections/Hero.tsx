@@ -1,5 +1,3 @@
-// import Background from '../layout/Background';
-// import Particle from '../layout/Background';
 export function Hero() {
   return (
     <>
