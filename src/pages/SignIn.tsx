@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import LoginForm from '@/components/auth/LoginForm';
-import { request } from '@/axios_helper';
+
+import { request, setAuthToken } from '@/axios_helper';
 
 export default function SignIn() {
   const [componentToShow, setComponentToShow] = useState<'login' | 'welcome' | 'messages'>('login');
@@ -11,9 +12,10 @@ export default function SignIn() {
       await request('POST', '/login', {
         login: username,
         password: password,
+      }).then((response) => {
+        setAuthToken((response.data as { token: string }).token);
       });
 
-      
       setComponentToShow('messages');
     } catch {
       setComponentToShow('welcome');
@@ -34,9 +36,10 @@ export default function SignIn() {
         lastName: lastName,
         login: username,
         password: password,
+      }).then((response) => {
+        setAuthToken((response.data as { token: string }).token);
       });
-      // Si necesitas guardar el token, puedes hacerlo aquí
-      // Por ejemplo: localStorage.setItem('token', response.data.token);
+
       setComponentToShow('messages');
     } catch {
       setComponentToShow('welcome');
