@@ -27,7 +27,6 @@ function SignIn() {
     event: React.FormEvent,
     name: string,
     email: string,
-    username: string,
     password: string
   ) => {
     event.preventDefault();
@@ -35,7 +34,6 @@ function SignIn() {
       await request('POST', '/register', {
         name: name,
         email: email,
-        login: username,
         password: password,
       }).then((response) => {
         setAuthToken((response.data as { token: string }).token);

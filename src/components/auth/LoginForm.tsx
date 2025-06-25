@@ -1,31 +1,24 @@
 import React, { useState } from 'react';
 
 interface LoginFormProps {
-  onLogin: (e: React.FormEvent, login: string, password: string) => void;
-  onRegister: (
-    e: React.FormEvent,
-    name: string,
-    email: string,
-    login: string,
-    password: string
-  ) => void;
+  onLogin: (e: React.FormEvent, email: string, password: string) => void;
+  onRegister: (e: React.FormEvent, name: string, email: string, password: string) => void;
 }
 
 const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onRegister }) => {
   const [activeTab, setActiveTab] = useState<'login' | 'register'>('login');
-  const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onLogin(e, login, password);
+    onLogin(e, email, password);
   };
 
   const handleRegisterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onRegister(e, name, email, login, password);
+    onRegister(e, name, email, password);
   };
 
   return (
@@ -56,16 +49,16 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onRegister }) => {
         {activeTab === 'login' && (
           <form onSubmit={handleLoginSubmit} className="space-y-6">
             <div>
-              <label htmlFor="loginName" className="block text-sm font-medium text-gray-700 mb-1">
-                Username
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                Email
               </label>
               <input
                 type="text"
-                id="loginName"
-                name="login"
+                id="email"
+                name="email"
                 className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={login}
-                onChange={(e) => setLogin(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 autoComplete="username"
                 required
               />
@@ -107,22 +100,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onRegister }) => {
                 className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="registerLogin"
-                className="block text-sm font-medium text-gray-700 mb-1">
-                Username
-              </label>
-              <input
-                type="text"
-                id="registerLogin"
-                name="login"
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={login}
-                onChange={(e) => setLogin(e.target.value)}
                 required
               />
             </div>
