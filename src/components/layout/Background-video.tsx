@@ -1,4 +1,4 @@
-export function BackgroundVideo() {
+function BackgroundVideo() {
   return (
     <>
       <div className="fixed top-0 left-0 w-full h-full z-0">
@@ -11,8 +11,12 @@ export function BackgroundVideo() {
         />
       </div>
 
-      <div className="fixed bottom-0 left-0 w-full h-1/2 pointer-events-none bg-gradient-to-t from-blue-400/20 
-      via-transparent to-transparent blur-2xl opacity-70" />
+      <div
+        className="fixed bottom-0 left-0 w-full h-1/2 pointer-events-none bg-gradient-to-t from-blue-400/20 
+      via-transparent to-transparent blur-2xl opacity-70"
+      />
     </>
   );
 }
+
+export default BackgroundVideo;

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-export function Login() {
+function Login() {
   const navigate = useNavigate();
 
   const handleOnClick = () => {
@@ -16,3 +16,5 @@ export function Login() {
     </button>
   );
 }
+
+export default Login;

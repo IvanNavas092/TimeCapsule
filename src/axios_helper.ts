@@ -12,17 +12,25 @@ export const setAuthToken = (token: string) => {
   window.localStorage.setItem('auth_token', token);
 };
 
+export const logOut = () => {
+  window.localStorage.removeItem('auth_token');
+};
+
+export function isLoggedIn() {
+  const token = getAuthToken();
+  return token !== null && token !== 'null';
+}
+
 export const request = <T = unknown>(
   method: Method,
   url: string,
   data?: unknown,
   config?: AxiosRequestConfig
 ): Promise<AxiosResponse<T>> => {
-
-  let headers = {}
+  let headers = {};
 
   if (getAuthToken() !== null && getAuthToken() !== 'null') {
-    headers = {'Authorization': `Bearer ${getAuthToken()}`}
+    headers = { Authorization: `Bearer ${getAuthToken()}` };
   }
 
   return axios({

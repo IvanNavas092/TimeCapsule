@@ -3,7 +3,7 @@ import LoginForm from '@/components/auth/LoginForm';
 import { useNavigate } from 'react-router-dom';
 import { request, setAuthToken } from '@/axios_helper';
 
-export default function SignIn() {
+function SignIn() {
   const [componentToShow, setComponentToShow] = useState<'login' | 'welcome' | 'messages'>('login');
   const navigate = useNavigate();
 
@@ -54,3 +54,5 @@ export default function SignIn() {
     </>
   );
 }
+
+export default SignIn;

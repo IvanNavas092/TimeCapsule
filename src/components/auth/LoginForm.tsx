@@ -98,7 +98,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onRegister }) => {
           <form onSubmit={handleRegisterSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                First name
+                Name
               </label>
               <input
                 type="text"
@@ -107,20 +107,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onRegister }) => {
                 className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                Last name
-              </label>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
@@ -137,6 +123,20 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onRegister }) => {
                 className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value={login}
                 onChange={(e) => setLogin(e.target.value)}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                Email
+              </label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>

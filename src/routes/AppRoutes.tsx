@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from '@/pages/Home';
 import SignIn from '@/pages/SignIn';
 
-export default function AppRoutes() {
+function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -10,3 +10,5 @@ export default function AppRoutes() {
     </Routes>
   );
 }
+
+export default AppRoutes;
