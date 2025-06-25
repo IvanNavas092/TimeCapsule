@@ -3,7 +3,7 @@ import Particles, { initParticlesEngine } from '@tsparticles/react';
 
 import { loadFull } from 'tsparticles';
 
-export default function Particle() {
+function Particle() {
   const [init, setInit] = useState(false);
   useEffect(() => {
     console.log('init');
@@ -73,3 +73,5 @@ export default function Particle() {
     </>
   );
 }
+
+export default Particle;
