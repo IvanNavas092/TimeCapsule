@@ -11,11 +11,15 @@ const infoBox: BoxProps[] = [
 
 function Subhero() {
   return (
-    <div className="z-10 h-screen bg-gradient-to-b from-[var(--color-secondary)]  to-[var(--color-tertiary)]">
+    <div className="relative">
+
+      <div className="absolute inset-0 -z-10 h-full bg-gradient-to-b from-[var(--color-secondary)] to-[var(--color-tertiary)]" />
+
+
       <div className="flex justify-center items-center">
         <div className="flex flex-col items-center text-center space-y-4 text-shadow-lg/30 text-shadow-blue-700 mt-6">
           <h1 className="font-bold text-white text-6xl">What is Time Capsule?</h1>
-          <div className="px-4 py-0.5 bg-blue-400 max-w-xs w-full  bg-gradient-to-tr  to-blue-400 via-transparent from-white"></div>
+          <div className="px-4 py-0.5 bg-blue-400 max-w-xs w-full bg-gradient-to-tr to-blue-400 via-transparent from-white"></div>
           <span className="block text-white max-w-xl text-shadow-lg text-xl">
             An advanced temporal storage system designed to preserve your most precious digital
             memories across the dimensions of time.
@@ -30,7 +34,9 @@ function Subhero() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center mt-8 gap-6 flex-wrap">
+
+      <div className="flex justify-center mt-8 pb-24 gap-6 flex-wrap">
+        
         {infoBox.map(({ icon, title, subtitle }, idx) => (
           <Box key={idx} icon={icon} title={title} subtitle={subtitle} />
         ))}
