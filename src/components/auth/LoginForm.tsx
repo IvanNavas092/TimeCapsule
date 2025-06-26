@@ -6,23 +6,6 @@ interface LoginFormProps {
   onRegister: (e: React.FormEvent, name: string, email: string, password: string) => void;
 }
 
-<<<<<<< HEAD
-const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onRegister }) => {
-  const [activeTab, setActiveTab] = useState<'login' | 'register'>('login');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-
-  const handleLoginSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onLogin(e, email, password);
-  };
-
-  const handleRegisterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onRegister(e, name, email, password);
-  };
-=======
 const LoginForm = ({ onLogin, onRegister }: LoginFormProps) => {
   const {
     activeTab,
@@ -34,7 +17,6 @@ const LoginForm = ({ onLogin, onRegister }: LoginFormProps) => {
     handleChange,
     handleSubmit,
   } = useLoginForm(onLogin, onRegister);
->>>>>>> main
 
   return (
     <>
@@ -80,103 +62,6 @@ const LoginForm = ({ onLogin, onRegister }: LoginFormProps) => {
             </button>
           </p>
         </div>
-<<<<<<< HEAD
-        {activeTab === 'login' && (
-          <form onSubmit={handleLoginSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                Email
-              </label>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                autoComplete="username"
-                required
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="loginPassword"
-                className="block text-sm font-medium text-gray-700 mb-1">
-                Password
-              </label>
-              <input
-                type="password"
-                id="loginPassword"
-                name="password"
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                autoComplete="current-password"
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition-colors duration-200">
-              Sign in
-            </button>
-          </form>
-        )}
-        {activeTab === 'register' && (
-          <form onSubmit={handleRegisterSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                Email
-              </label>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="registerPassword"
-                className="block text-sm font-medium text-gray-700 mb-1">
-                Password
-              </label>
-              <input
-                type="password"
-                id="registerPassword"
-                name="password"
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition-colors duration-200">
-              Sign up
-            </button>
-          </form>
-        )}
-=======
->>>>>>> main
       </div>
     </>
   );
