@@ -8,12 +8,22 @@
   --color-quaternary: #3f3f40;
 }
 
+* {
+  font-family: "Gruppo", sans-serif;
+  font-style: normal;
+}
 
 /* fonts */
 /* opcion 1 */
 .title-font {
   font-family: "Special Gothic Expanded One", sans-serif;
-  font-weight:400;
+  font-weight:100;
+  font-style: normal;
+}
+
+.logo-font {
+  font-family: "Gruppo", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
 
