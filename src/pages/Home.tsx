@@ -1,12 +1,15 @@
 import Hero from '@/components/sections/Hero';
 import Header from '@/components/layout/Header';
 import Subhero from '@/components/sections/Subhero';
-import BackgroundVideo from '@/components/layout/Background-video';
+import Particle from '@/components/layout/Background';
 
 function Home() {
   return (
     <>
-      <BackgroundVideo />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-[#0a0f2e]">
+        
+        <Particle />
+      </div>
       <Header />
       <Hero />
       <Subhero />
