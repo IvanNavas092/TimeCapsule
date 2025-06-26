@@ -1,4 +1,5 @@
 // import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import LoginInput from './components/Input';
 import { useLoginForm } from './hooks/useLoginForm';
 
@@ -28,18 +29,43 @@ const LoginForm = ({
     handleSubmit,
   } = useLoginForm(onLogin, onRegister);
 
+  const navigate = useNavigate();
+
+  const handleOnClick = () => {
+    navigate('/');
+  };
+
   return (
     <>
       <div className="relative min-h-screen grid  place-items-center text-white px-4">
-        <div className="flex flex-col h-full items-center justify-center">
-          <h2 className="text-5xl font-bold mb-3 title-font">Time Capsule</h2>
+        <button onClick={handleOnClick} className="absolute top-0 left-0 p-8 cursor-pointer flex">
+          <svg
+            className="w-6 h-6 text-gray-800 dark:text-white"
+            aria-hidden="true"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24">
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m15 19-7-7 7-7"
+            />
+          </svg>
+          <span className='ml-2 font-bold'>Back to Home</span>
+        </button>
+
+        <div className="flex flex-col h-full items-center justify-center ">
+          <h2 className="text-5xl font-bold mb-3 logo-font">TIME CAPSULE</h2>
           <p className="text-sm text-blue-300 mb-20">Shaping the perfect space</p>
 
           {showError && (
             <div className="relative bg-red-500/30 w-full text-sm rounded-full text-center my-2 py-2 px-4">
               <button
                 onClick={onCloseError}
-                className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center text-white w-6 h-6 p-0"
+                className="absolute right-2 top-1/2 cursor-pointer -translate-y-1/2 flex items-center justify-center text-white w-6 h-6 p-0"
                 style={{ lineHeight: 0 }}>
                 <svg
                   fill="none"
