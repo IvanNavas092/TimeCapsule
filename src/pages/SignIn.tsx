@@ -2,6 +2,7 @@ import { useState } from 'react';
 import LoginForm from '@/components/auth/LoginForm';
 import { useNavigate } from 'react-router-dom';
 import { request, setAuthToken } from '@/axios_helper';
+import Particle from '@/components/layout/Background';
 
 function SignIn() {
   const [componentToShow, setComponentToShow] = useState<'login' | 'welcome' | 'messages'>('login');
@@ -47,8 +48,10 @@ function SignIn() {
 
   return (
     <>
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-black to-blue-900">
+        <Particle />
+      </div>
       {componentToShow === 'login' && <LoginForm onLogin={onLogin} onRegister={onRegister} />}
-      {/* Puedes agregar aquí otras vistas según el valor de componentToShow */}
     </>
   );
 }
