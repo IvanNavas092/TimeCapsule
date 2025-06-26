@@ -7,11 +7,11 @@ function SignIn() {
   const [componentToShow, setComponentToShow] = useState<'login' | 'welcome' | 'messages'>('login');
   const navigate = useNavigate();
 
-  const onLogin = async (e: React.FormEvent, username: string, password: string) => {
+  const onLogin = async (e: React.FormEvent, email: string, password: string) => {
     e.preventDefault();
     try {
       await request('POST', '/login', {
-        login: username,
+        email: email,
         password: password,
       }).then((response) => {
         setAuthToken((response.data as { token: string }).token);
