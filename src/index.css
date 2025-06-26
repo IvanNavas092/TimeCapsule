@@ -3,15 +3,9 @@
 /* base colors */
 :root {
   --color-primary: #000000;
-  --color-secondary: #9810fa;
-  --color-tertiary: #2f2f30;
+  --color-secondary: #0a0f2e;
+  --color-tertiary: #1e2e5a;
   --color-quaternary: #3f3f40;
-  --color-quinary: #4f4f50;
-  --color-senary: #5f5f60;
-  --color-septenary: #6f6f70;
-  --color-octonary: #7f7f80;
-  --color-nonary: #8f8f90;
-  --color-denary: #9f9f90;
 }
 
 
