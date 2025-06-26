@@ -1,6 +1,5 @@
 import Hero from '@/components/sections/Hero';
 import Header from '@/components/layout/Header';
-import Subhero from '@/components/sections/Subhero';
 import Particle from '@/components/layout/Background';
 
 function Home() {
@@ -11,7 +10,6 @@ function Home() {
       </div>
       <Header />
       <Hero />
-      <Subhero />
     </>
   );
 }
