@@ -8,8 +8,8 @@ export function useLoginForm(
 ): {
   activeTab: string;
   showPassword: boolean;
-  formData: any;
-  fields: any[];
+  formData: { name: string; email: string; password: string; };
+  fields: { name: string; label: string; type: string; placeholder: string; }[];
   toggleTab: () => void;
   togglePassword: () => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
