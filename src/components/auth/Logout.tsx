@@ -2,8 +2,7 @@ import { logOut } from '@/axios_helper';
 
 function Logout() {
   const handleOnClick = () => {
-    logOut();
-    window.location.reload();
+    logOut(); 
   };
 
   return (
