@@ -2,6 +2,7 @@ import Hero from '@/components/sections/Hero';
 import Header from '@/components/layout/Header';
 import Particle from '@/components/layout/Background';
 import Subhero from '@/components/sections/DataFormats';
+import WhatIs from '@/components/sections/WhatIs';
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       </div>
       <Header />
       <Hero />
+      <WhatIs />
       <Subhero />
     </>
   );
