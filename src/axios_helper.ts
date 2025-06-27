@@ -23,7 +23,7 @@ axios.interceptors.response.use(
         originalRequest.headers['Authorization'] = `Bearer ${res.data.accessToken}`;
         return axios(originalRequest);
       } catch (refreshError) {
-        logOut();
+        logout();
         window.location.href = '/signin';
         return Promise.reject(refreshError);
       }
@@ -40,8 +40,7 @@ export const setAuthToken = (token: string) => {
   window.localStorage.setItem('auth_token', token);
 };
 
-export const logOut = () => {
-  console.log('logOut called');
+export const logout = () => {
   const token = getAuthToken();
   window.localStorage.removeItem('auth_token');
   const options = {
