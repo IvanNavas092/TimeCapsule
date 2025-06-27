@@ -13,11 +13,16 @@ function SignIn() {
   const onLogin = async (e: React.FormEvent, email: string, password: string) => {
     e.preventDefault();
     try {
-      await request('POST', '/login', {
-        email: email,
-        password: password,
-      }).then((response) => {
-        setAuthToken((response.data as { token: string }).token);
+      await request(
+        'POST',
+        '/login',
+        {
+          email: email,
+          password: password,
+        },
+        { withCredentials: true }
+      ).then((response) => {
+        setAuthToken((response.data as { accessToken: string }).accessToken);
       });
 
       navigate('/');
@@ -34,12 +39,17 @@ function SignIn() {
   const onRegister = async (e: React.FormEvent, name: string, email: string, password: string) => {
     e.preventDefault();
     try {
-      await request('POST', '/register', {
-        name: name,
-        email: email,
-        password: password,
-      }).then((response) => {
-        setAuthToken((response.data as { token: string }).token);
+      await request(
+        'POST',
+        '/register',
+        {
+          name: name,
+          email: email,
+          password: password,
+        },
+        { withCredentials: true }
+      ).then((response) => {
+        setAuthToken((response.data as { accessToken: string }).accessToken);
       });
 
       navigate('/');
