@@ -20,7 +20,12 @@ function Particle() {
         <Particles
           id="tsparticles"
           style={{
-            zIndex: 0,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: -10,
           }}
           options={{
             fpsLimit: 160,
