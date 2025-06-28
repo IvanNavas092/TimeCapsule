@@ -1,11 +1,13 @@
 import LoginForm from '@/components/auth/LoginForm';
 import { useNavigate } from 'react-router-dom';
-import { request, setAuthToken } from '@/axios_helper';
+import { request } from '@/axios_helper';
 import Particle from '@/components/layout/Background';
 import { useState } from 'react';
+import { useAuth } from '@/hooks/AuthContext';
 
 function SignIn() {
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const [errorMessage, setErrorMessage] = useState('');
   const [showError, setShowError] = useState(false);
@@ -22,7 +24,7 @@ function SignIn() {
         },
         { withCredentials: true }
       ).then((response) => {
-        setAuthToken((response.data as { accessToken: string }).accessToken);
+        login((response.data as { accessToken: string }).accessToken);
       });
 
       navigate('/');
@@ -49,7 +51,7 @@ function SignIn() {
         },
         { withCredentials: true }
       ).then((response) => {
-        setAuthToken((response.data as { accessToken: string }).accessToken);
+        login((response.data as { accessToken: string }).accessToken);
       });
 
       navigate('/');
