@@ -1,6 +1,6 @@
 // import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import LoginInput from './components/Input';
+import LoginInput from '../layout/Input';
 import { useLoginForm } from './hooks/useLoginForm';
 
 interface LoginFormProps {
