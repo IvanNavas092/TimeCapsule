@@ -27,7 +27,7 @@ function SignIn() {
         login((response.data as { accessToken: string }).accessToken);
       });
 
-      navigate('/');
+      navigate('/Dashboard');
     } catch (error: unknown) {
       setShowError(true);
       console.log(showError);
@@ -67,7 +67,7 @@ function SignIn() {
 
   return (
     <>
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-black to-blue-900">
+      <div className=" inset-0  bg-gradient-to-br from-black to-blue-900">
         <Particle />
       </div>
       <LoginForm
