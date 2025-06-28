@@ -13,7 +13,6 @@ function Header() {
         {isLoggedIn && user ? (
           <div className="flex flex-row">
             <UserInfo avatar={user.avatar ?? undefined} name={user.name} email={user.email} />
-            <Logout />
           </div>
         ) : (
           <Login />
