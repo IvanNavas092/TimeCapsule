@@ -7,7 +7,8 @@ import WhatIs from '@/components/sections/WhatIs';
 function Home() {
   return (
     <>
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-[var(--color-secondary)]">
+      <div
+        className="absolute w-full overflow-x-hidden inset-0 bg-gradient-to-b from-black via-black to-[var(--color-secondary)]">
         <Particle />
       </div>
       <Header />
