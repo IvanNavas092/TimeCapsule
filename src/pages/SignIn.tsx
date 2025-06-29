@@ -69,14 +69,14 @@ function SignIn() {
     <>
       <div className=" inset-0  bg-gradient-to-br from-black to-blue-900">
         <Particle />
-      </div>
       <LoginForm
         onLogin={onLogin}
         onRegister={onRegister}
         errorMessage={errorMessage}
         showError={showError}
         onCloseError={() => setShowError(false)}
-      />
+        />
+        </div>
     </>
   );
 }

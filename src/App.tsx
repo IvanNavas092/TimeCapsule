@@ -7,10 +7,10 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
       <div
-        className="absolute w-full overflow-x-hidden inset-0 bg-gradient-to-b from-black via-black to-[var(--color-secondary)]">
+        className="absolute w-full overflow-x-hidden  ">
         <Particle />
-      </div>
         <AppRoutes />
+      </div>
       </AuthProvider>
     </BrowserRouter>
   );

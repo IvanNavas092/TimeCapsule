@@ -34,7 +34,7 @@ const items: SidebarItemProps[] = [
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 z-20 h-screen fixed  border-r p-4 text-white">
+    <aside className="w-64 z-20 min-h-[782px] relative mt-3 border-r p-4 text-white">
       <h2 className="text-xl font-bold mb-6">Mi Panel</h2>
       <nav className="flex flex-col gap-2">
         {items.map((item, index) => (
