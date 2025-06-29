@@ -11,8 +11,8 @@ const SidebarItem = ({ icon, name, to }: SidebarItemProps) => {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `flex items-center gap-3 px-4 py-2 rounded-md hover:bg-blue-100 transition ${
-          isActive ? "bg-blue-200 font-semibold" : ""
+        `flex items-center gap-3 px-4 py-2 rounded-md hover:bg-blue-100  hover:text-black ${
+          isActive ? "bg-blue-900  font-semibold" : ""
         }`
       }
     >

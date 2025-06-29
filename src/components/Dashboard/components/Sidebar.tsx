@@ -1,6 +1,6 @@
 import SidebarItem from './SidebarItem';
 import type { SidebarItemProps } from './SidebarItem';
-
+const basePath = "/dashboard"
 const items: SidebarItemProps[] = [
   {
     icon: (
@@ -14,7 +14,7 @@ const items: SidebarItemProps[] = [
       </svg>
     ),
     name: 'Inicio',
-    to: '/dashboard',
+    to: `${basePath}/intro`,
   },
   {
     icon: (
@@ -28,15 +28,15 @@ const items: SidebarItemProps[] = [
       </svg>
     ),
     name: 'Crear',
-    to: '/create',
+    to: `${basePath}/create-capsule`,
   },
 ];
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 z-20 min-h-[782px] relative mt-3 border-r p-4 text-white">
+    <aside className="w-64 z-20 min-h-[550px] relative mt-3 border-r p-4 text-white">
       <h2 className="text-xl font-bold mb-6">Mi Panel</h2>
-      <nav className="flex flex-col gap-2">
+      <nav className="flex flex-col gap-4">
         {items.map((item, index) => (
           <SidebarItem key={index} {...item} />
         ))}
