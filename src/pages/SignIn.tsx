@@ -27,7 +27,7 @@ function SignIn() {
         login((response.data as { accessToken: string }).accessToken);
       });
 
-      navigate('/Dashboard');
+      navigate('/dashboard/intro');
     } catch (error: unknown) {
       setShowError(true);
       console.log(showError);
