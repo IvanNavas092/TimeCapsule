@@ -6,11 +6,11 @@ export interface BoxProps {
 
 const Box = ({ icon, title, subtitle }: BoxProps) => (
   <div className="relative w-80 p-7 rounded-2xl bg-[rgba(255,255,255,0.02)] border border-blue-500 
-    shadow-md overflow-hidden transition-transform duration-200 transform hover:scale-105 group">
+    shadow-md overflow-hidden transition-transform duration-100 transform hover:scale-105 group">
     
     {/* circles */}
     <div className="absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 pointer-events-none">
-      <div className="w-20 h-20 rounded-full border border-gray-700/50 group-hover:border-cyan-400 transition-all duration-200"></div>
+      <div className="w-20 h-20 rounded-full border border-gray-700/50 group-hover:border-cyan-400 transition-all duration-100"></div>
       <div className="absolute top-1/2 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-gray-700/70"></div>
       <div className="absolute top-1/2 left-1/2 w-2 h-2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full"></div>
     </div>
@@ -22,16 +22,16 @@ const Box = ({ icon, title, subtitle }: BoxProps) => (
     </div>
 
     {/* title */}
-    <h2 className="text-white font-semibold text-xl mb-1 transition duration-200 group-hover:drop-shadow-[0_0_6px_white]">
+    <h2 className="text-white font-semibold text-xl mb-1 transition duration-100 group-hover:drop-shadow-[0_0_6px_white]">
       {title}
     </h2>
-    <p className="text-md text-gray-300 transition duration-200 group-hover:drop-shadow-[0_0_4px_cyan]">
+    <p className="text-md text-gray-300 transition duration-100 group-hover:drop-shadow-[0_0_4px_cyan]">
       {subtitle}
     </p>
 
     {/* lines*/}
     <div className="mt-4 h-1 w-full flex gap-1">
-      <div className="h-full w-8 bg-cyan-400 rounded-full group-hover:w-full transition-all duration-200" />
+      <div className="h-full w-8 bg-cyan-400 rounded-full group-hover:w-full transition-all duration-100" />
       <div className="h-full w-3 bg-cyan-600 rounded-full" />
       <div className="h-full w-5 bg-cyan-500 rounded-full" />
     </div>
