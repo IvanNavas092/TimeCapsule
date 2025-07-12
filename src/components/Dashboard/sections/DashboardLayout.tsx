@@ -56,7 +56,7 @@ export default function DashboardLayout() {
         </button>
       )}
       {/* sidebar */}
-      <aside className="mt-24 shadow-xl shadow-blue-700/50 border-r z-20">
+      <aside className="mt-24 z-20">
         <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       </aside>
 
