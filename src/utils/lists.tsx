@@ -153,7 +153,7 @@ export const PropertiesList: ListProps[] = [
       'Desde cápsulas que se abren en unos días hasta aquellas programadas para décadas en el futuro. No hay límites en cuanto tiempo puedes programar - tus recuerdos te esperarán el tiempo que necesites.',
   },
 ];
-
+// -------------------------------------------------
 // DATAFORMAT.TSX
 import type { BoxProps } from '@/components/layout/Box';
 
@@ -180,10 +180,68 @@ export const infoBox: BoxProps[] = [
   },
 ];
 
+// -------------------------------------------------
 // SIDEBAR.TSX
 import type { SidebarItemProps } from '@/components/Dashboard/components/SidebarItem';
 const basePath = '/dashboard';
 export const itemsSidebar: SidebarItemProps[] = [
+  {
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className='w-5 h-5'>
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5" />
+        <path d="M12 12l8 -4.5" />
+        <path d="M12 12l0 9" />
+        <path d="M12 12l-8 -4.5" />
+      </svg>
+    ),
+    name: 'My capsules',
+    to: `${basePath}/my-capsules`,
+  },
+  {
+    icon: (
+      <svg
+        className="w-5 h-5 flex-shrink-0"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        viewBox="0 0 24 24">
+        <path d="M12 4v16m8-8H4" />
+      </svg>
+    ),
+    name: 'Create Capsule',
+    to: `${basePath}/create-capsule`,
+  },
+  {
+    icon: (
+      <svg
+        className="w-5 h-5"
+        aria-hidden="true"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24">
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeWidth="2"
+          d="M7.926 10.898 15 7.727m-7.074 5.39L15 16.29M8 12a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm12 5.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm0-11a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"
+        />
+      </svg>
+    ),
+    name: 'Shared With Me',
+    to: `${basePath}/shareds`,
+  },
   {
     icon: (
       <svg
@@ -195,57 +253,8 @@ export const itemsSidebar: SidebarItemProps[] = [
         <path d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6" />
       </svg>
     ),
-    name: 'Home',
-    to: `${basePath}/intro`,
-  },
-  {
-    icon: (
-      <svg
-        className="w-5 h-5 flex-shrink-0"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        viewBox="0 0 24 24">
-        <path d="M12 4v16m8-8H4" />
-      </svg>
-    ),
-    name: 'Create capsule',
-    to: `${basePath}/create-capsule`,
-  },
-  {
-    icon: (
-      <svg
-        className="w-5 h-5 flex-shrink-0"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        viewBox="0 0 24 24">
-        <path d="M12 4v16m8-8H4" />
-      </svg>
-    ),
-    name: 'My capsules',
-    to: `${basePath}/create-capsule`,
-  },
-  {
-    icon: (
-      <svg
-        className="w-5 h-5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        viewBox="0 0 24 24">
-        <path
-          stroke="currentColor"
-          strokeLinecap="square"
-          strokeLinejoin="round"
-          strokeWidth="1"
-          d="M10 19H5a1 1 0 0 1-1-1v-1a3 3 0 0 1 3-3h2m10 1a3 3 0 0 1-3 3m3-3a3 3 0 0 0-3-3m3 3h1m-4 3a3 3 0 0 1-3-3m3 3v1m-3-4a3 3 0 0 1 3-3m-3 3h-1m4-3v-1m-2.121 1.879-.707-.707m5.656 5.656-.707-.707m-4.242 0-.707.707m5.656-5.656-.707.707M12 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-        />
-      </svg>
-    ),
     name: 'Settings',
-    to: `${basePath}/create-capsule`,
+    to: `${basePath}/settings`,
   },
 ];
+// -------------------------------------------------

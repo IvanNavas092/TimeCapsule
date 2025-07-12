@@ -19,7 +19,7 @@ function WhatIs() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 mt-4 place-items-center mx-auto max-w-7xl ">
+      <div className="grid grid-cols-2 gap-6 mt-4 place-items-center mx-auto max-w-7xl ">
         {PropertiesList.map(({ icon, title, description }, key) => (
           <List key={key} icon={icon} title={title} description={description} />
         ))}

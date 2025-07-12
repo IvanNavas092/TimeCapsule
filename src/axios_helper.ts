@@ -1,5 +1,6 @@
 import axios from 'axios';
 import type { AxiosRequestConfig, AxiosResponse, Method } from 'axios';
+import type { Capsule } from './components/interfaces/Capsule';
 
 axios.defaults.baseURL = 'http://localhost:8080/api';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -70,18 +71,24 @@ export const request = <T = unknown>(
   data?: unknown,
   config?: AxiosRequestConfig
 ): Promise<AxiosResponse<T>> => {
-  let headers = {};
+  const token = getAuthToken();
 
-  if (getAuthToken() !== null && getAuthToken() !== 'null') {
-    headers = { Authorization: `Bearer ${getAuthToken()}` };
-  }
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+    ...(token ? { Authorization: `Bearer ${token}` } : {}),
+  };
 
   return axios({
     method,
-    headers: headers,
     url,
     data,
+    headers,
     withCredentials: true,
     ...config,
   });
 };
+
+// getCapsules
+export function getCapsules() {
+  return request<Capsule[]>('GET', '/capsules');
+}

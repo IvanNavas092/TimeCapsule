@@ -27,7 +27,7 @@ function SignIn() {
         login((response.data as { accessToken: string }).accessToken);
       });
 
-      navigate('/dashboard/intro');
+      navigate('/dashboard/my-capsules');
     } catch (error: unknown) {
       setShowError(true);
       console.log(showError);
