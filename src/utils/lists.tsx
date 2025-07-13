@@ -258,3 +258,22 @@ export const itemsSidebar: SidebarItemProps[] = [
   },
 ];
 // -------------------------------------------------
+// CREATE CAPSULE.TSX FORM
+export interface CreatecapsuleForm {
+  label: string;
+  type: string;
+  placeholder?: string;
+  name: string;
+  layout: string;
+}
+
+// utils/lists.ts
+export const capsuleFormList: CreatecapsuleForm[] = [
+  { label: 'Title', type: 'text', placeholder: 'My Capsule', name: 'title', layout: 'block' },
+  { label: 'Description', type: 'text', placeholder: 'My Capsule Description', name: 'description', layout: 'block' },
+  { label: 'Share with others', type: 'radio', name: 'visibility', layout: 'inline' },
+  { label: 'Private', type: 'radio', name: 'visibility', layout: 'inline' },
+  { label: 'Open Date', type: 'datetime-local', name: 'closeDate', layout: 'block' },
+  { label: 'Avatar URL', type: 'text', placeholder: 'https://...', name: 'CapsuleAvatar', layout: 'block' },
+];
+

@@ -61,7 +61,7 @@ export default function DashboardLayout() {
       </aside>
 
       {/* main content */}
-      <main className="row-start-2 overflow-y-auto p-6 z-10 w-full">
+      <main className="row-start-2  overflow-y-auto p-6 z-10 w-full">
         <Outlet />
       </main>
     </div>

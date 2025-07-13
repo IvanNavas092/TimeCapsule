@@ -10,20 +10,18 @@ import MyCapsules from '@/components/Dashboard/sections/MyCapsules';
 function AppRoutes() {
   return (
     <Routes>
+      {/* Públicas */}
       <Route path="/" element={<Home />} />
       <Route path="/signin" element={<SignIn />} />
 
-      {/* Privates */}
+      {/* Privadas */}
       <Route element={<PrivateRoute />}>
-      </Route>
         <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route path='shareds' element={<Shareds />} />
-          <Route path='create-capsule' element={<CreateCapsule />} />
-          <Route path='my-capsules' element={<MyCapsules />} />
-          {/* <Route path='capsule/:id' element={<Capsule />} /> */}
-
-          {/* <Route path='capsule/:id' element={<Capsule />} /> */}
+          <Route path="shareds" element={<Shareds />} />
+          <Route path="create-capsule" element={<CreateCapsule />} />
+          <Route path="my-capsules" element={<MyCapsules />} />
         </Route>
+      </Route>
     </Routes>
   );
 }

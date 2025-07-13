@@ -19,7 +19,7 @@ const MyCapsules = () => {
                 description={capsule.description}
                 createAt={capsule.createAt}
                 closeDate={capsule.closeDate}
-                status='active'
+                status='locked'
               />
             ))
           }
