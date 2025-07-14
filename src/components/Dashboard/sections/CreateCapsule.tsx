@@ -3,7 +3,9 @@ import { capsuleFormList } from '@/utils/lists';
 import { createCapsule } from '@/axios_helper'; // Asegúrate de importar correctamente
 import type { CapsuleDto } from '@/components/interfaces/Capsule';
 
-const CreatecapsuleForm= () => {
+const CreatecapsuleForm = () => {
+  let step = 2;
+
   const [formData, setFormData] = useState<CapsuleDto>({
     title: '',
     description: '',
@@ -30,6 +32,7 @@ const CreatecapsuleForm= () => {
     setLoading(true);
     setErrorMsg('');
     setSuccessMsg('');
+    step = 2;
 
     try {
       const capsule: CapsuleDto = {
@@ -62,61 +65,81 @@ const CreatecapsuleForm= () => {
           Create a Time Capsule
         </h2>
 
-        {capsuleFormList.map((form, index) => {
-          const isCheckbox = form.type === 'checkbox';
+        {step === 1 ? (
+          <>
+            {capsuleFormList.map((form, index) => {
+              const isCheckbox = form.type === 'checkbox';
 
-          return (
-            <div
-              key={index}
-              className={`${
-                form.layout === 'inline'
-                  ? 'flex items-center gap-4'
-                  : 'flex flex-col'
-              }`}
-            >
-              <label
-                htmlFor={form.name}
-                className={`text-sm font-semibold tracking-wide ${
-                  form.layout === 'inline' ? '' : 'mb-2'
-                }`}
-              >
-                {form.label}
-              </label>
+              return (
+                <div
+                  key={index}
+                  className={`${
+                    form.layout === 'inline' ? 'flex items-center gap-4' : 'flex flex-col'
+                  }`}>
+                  <label
+                    htmlFor={form.name}
+                    className={`text-sm font-semibold tracking-wide ${
+                      form.layout === 'inline' ? '' : 'mb-2'
+                    }`}>
+                    {form.label}
+                  </label>
 
-              <input
-                id={form.name}
-                name={form.name}
-                type={form.type}
-                value={
-                  !isCheckbox
-                    ? (formData[form.name as keyof CapsuleDto] as string) ?? ''
-                    : undefined
-                }
-                checked={isCheckbox ? Boolean(formData[form.name as keyof CapsuleDto]) : undefined}
-                placeholder={form.placeholder}
-                onChange={handleChange}
-                className={`${
-                  isCheckbox
-                    ? 'h-5 w-5 accent-indigo-500'
-                    : 'bg-transparent border-b border-gray-700/50 text-white placeholder-white/50 p-3 focus:outline-none focus:border-b-blue-700 transition-all rounded'
-                }`}
-              />
+                  <input
+                    id={form.name}
+                    name={form.name}
+                    type={form.type}
+                    value={
+                      !isCheckbox
+                        ? (formData[form.name as keyof CapsuleDto] as string) ?? ''
+                        : undefined
+                    }
+                    checked={
+                      isCheckbox ? Boolean(formData[form.name as keyof CapsuleDto]) : undefined
+                    }
+                    placeholder={form.placeholder}
+                    onChange={handleChange}
+                    className={`${
+                      isCheckbox
+                        ? 'h-5 w-5 accent-indigo-500'
+                        : 'bg-transparent border-b border-gray-700/50 text-white placeholder-white/50 p-3 focus:outline-none focus:border-b-blue-700 transition-all rounded'
+                    }`}
+                  />
+                </div>
+              );
+            })}
+
+            {errorMsg && <p className="text-red-400">{errorMsg}</p>}
+            {successMsg && <p className="text-green-400">{successMsg}</p>}
+
+            <div className="pt-4">
+              <button
+                onClick={handleSubmit}
+                disabled={loading}
+                className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold tracking-wide shadow-lg shadow-indigo-500/20 transition duration-200">
+                {loading ? 'Creating...' : 'Create'}
+              </button>
             </div>
-          );
-        })}
-
-        {errorMsg && <p className="text-red-400">{errorMsg}</p>}
-        {successMsg && <p className="text-green-400">{successMsg}</p>}
-
-        <div className="pt-4">
-          <button
-            onClick={handleSubmit}
-            disabled={loading}
-            className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold tracking-wide shadow-lg shadow-indigo-500/20 transition duration-200"
-          >
-            {loading ? 'Creating...' : 'Create'}
-          </button>
-        </div>
+          </>
+        ) : (
+          <>
+            <div className="flex flex-col items-center justify-center">
+              <label className=" text-sm font-semibold mb-2">Upload Media</label>
+              <input
+                type="file"
+                accept="image/*,video/*"
+                multiple
+                // onChange={handleMediaUpload} // Esta función actualizaría otro estado
+                className="text-white file:bg-indigo-600 file:text-white file:rounded file:px-4 file:py-2 file:border-0 file:cursor-pointer "
+              />
+              <button
+                className="mt-6  bg-blue-600 py-2 px-4 rounded text-white cursor-pointer"
+                // onClick={handleSubmitMedia}
+              >
+                Upload
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
