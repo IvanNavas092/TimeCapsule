@@ -1,5 +1,5 @@
 export interface Capsule {
-  id: number;
+  id: string;
   title: string;
   description: string;
   isShared?: boolean;
@@ -7,5 +7,14 @@ export interface Capsule {
   owner?: string;
   createAt?: Date;
   closeDate?: Date;
+  CapsuleAvatar?: string;
+}
+
+export interface CapsuleDto {
+  title: string;
+  description: string;
+  isShared?: boolean;
+  isPrivate?: boolean;
+  closeDate?: string;
   CapsuleAvatar?: string;
 }

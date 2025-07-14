@@ -11,7 +11,7 @@ const SidebarItem = ({ icon, name, to }: SidebarItemProps) => {
     <NavLink
     to={to}
     className={({ isActive }) =>
-      `flex justify-between items-center gap-3 px-3 py-2 rounded-md hover:bg-blue-100 mx-2 hover:text-black ${
+      `flex justify-between items-center gap-3 px-3 py-2 rounded-md hover:bg-blue-300 mx-2 hover:text-black ${
         isActive ? 'bg-blue-900 font-semibold' : ''
       }`
     }>

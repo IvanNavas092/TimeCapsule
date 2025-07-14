@@ -1,7 +1,6 @@
 import axios from 'axios';
 import type { AxiosRequestConfig, AxiosResponse, Method } from 'axios';
-import type { Capsule } from './components/interfaces/Capsule';
-
+import type { Capsule, CapsuleDto } from './components/interfaces/Capsule';
 axios.defaults.baseURL = 'http://localhost:8080/api';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.withCredentials = true;
@@ -91,4 +90,14 @@ export const request = <T = unknown>(
 // getCapsules
 export function getCapsules() {
   return request<Capsule[]>('GET', '/capsules');
+}
+
+//create capsule
+export function createCapsule(data: CapsuleDto) {
+  return request<Capsule>('POST', '/capsules', data);
+}
+
+//get capsule
+export function getCapsule(id: number) {
+  return request<Capsule>('GET', `/capsules/${id}`);
 }

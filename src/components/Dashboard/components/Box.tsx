@@ -6,7 +6,7 @@ export interface BoxProps {
   closeDate?: Date;
   CapsuleAvatar?: string;
   status?: 'active' | 'locked' | 'expired';
-  isShared?: boolean;
+  isPrivate?: boolean;
   onClick?: () => void;
 }
 
@@ -17,7 +17,7 @@ const Box = ({
   createAt,
   closeDate,
   status = 'active',
-  isShared,
+  isPrivate,
   onClick,
 }: BoxProps) => {
   const statusColors = {
@@ -52,7 +52,7 @@ const Box = ({
       {/* circle with status */}
 
       { 
-        !isShared ? (
+        isPrivate ? (
           <div className={`${statusColors[status]} p-2 m-2 absolute top-0 right-0 rounded-full`} />
         ) : (
           <p className="p-2 m-2 absolute top-0 right-0 rounded-full bg-blue-500/20 border-blue-400/50 text-xs text-blue-200">Shared</p>
