@@ -5,7 +5,6 @@ import { getCapsules } from '@/axios_helper';
 export const useCapsules = () => {
   const [capsules, setCapsules] = useState<Capsule[]>([]);
 
-
   useEffect(() => {
     const fetchCapsules = async () => {
       try {

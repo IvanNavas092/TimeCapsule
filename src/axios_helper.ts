@@ -1,6 +1,7 @@
 import axios from 'axios';
 import type { AxiosRequestConfig, AxiosResponse, Method } from 'axios';
-import type { Capsule, CapsuleDto } from './components/interfaces/Capsule';
+import type { Capsule, CapsuleDto, UserCapsules } from './components/interfaces/Capsule';
+
 axios.defaults.baseURL = 'http://localhost:8080/api';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.withCredentials = true;
@@ -91,9 +92,15 @@ export const request = <T = unknown>(
 export function getCapsules() {
   return request<Capsule[]>('GET', '/capsules');
 }
+
 // get capsule for user
-export function getUserCapsules(userId: string) {
-  return request<Capsule[]>('GET', `/userCapsule/${userId}`);
+export function getOwnCapsules(userId: string) {
+  return request<Capsule[]>('GET', `/capsules/${userId}`);
+}
+
+// get capsule for user
+export function getSharedCapsules(userId: string) {
+  return request<UserCapsules[]>('GET', `/userCapsule/${userId}`);
 }
 
 //create capsule
@@ -102,6 +109,6 @@ export function createCapsule(data: CapsuleDto) {
 }
 
 //get capsule
-export function getCapsule(id: number) {
-  return request<Capsule>('GET', `/capsules/${id}`);
+export function getCapsule(capsuleId: string) {
+  return request<Capsule>('GET', `/capsules/${capsuleId}`);
 }
