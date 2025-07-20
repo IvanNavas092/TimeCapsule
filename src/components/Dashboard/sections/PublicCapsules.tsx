@@ -1,6 +1,6 @@
 import { useUserCapsules } from '@/hooks/useUserCapsules';
 import Box from '../components/Box';
-const MyCapsules = () => {
+const PublicCapsules = () => {
   const { capsules } = useUserCapsules();
   return (
     <>
@@ -33,4 +33,4 @@ const MyCapsules = () => {
     </>
   );
 };
-export default MyCapsules;
+export default PublicCapsules;

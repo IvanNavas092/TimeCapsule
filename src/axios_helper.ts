@@ -91,6 +91,10 @@ export const request = <T = unknown>(
 export function getCapsules() {
   return request<Capsule[]>('GET', '/capsules');
 }
+// get capsule for user
+export function getUserCapsules(userId: string) {
+  return request<Capsule[]>('GET', `/userCapsule/${userId}`);
+}
 
 //create capsule
 export function createCapsule(data: CapsuleDto) {

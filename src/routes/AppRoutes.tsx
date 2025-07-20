@@ -6,7 +6,8 @@ import DashboardLayout from '@/components/Dashboard/sections/DashboardLayout';
 import Shareds from '@/components/Dashboard/sections/Shareds';
 import CreateCapsule from '@/components/Dashboard/sections/CreateCapsule';
 import MyCapsules from '@/components/Dashboard/sections/MyCapsules';
-
+import PublicCapsules from '@/components/Dashboard/sections/PublicCapsules';
+  
 function AppRoutes() {
   return (
     <Routes>
@@ -17,9 +18,11 @@ function AppRoutes() {
       {/* Privadas */}
       <Route element={<PrivateRoute />}>
         <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route path="public-capsules" element={<PublicCapsules />} />
+          
+          <Route path="my-capsules" element={<MyCapsules />} />
           <Route path="shareds" element={<Shareds />} />
           <Route path="create-capsule" element={<CreateCapsule />} />
-          <Route path="my-capsules" element={<MyCapsules />} />
         </Route>
       </Route>
     </Routes>

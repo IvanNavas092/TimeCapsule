@@ -1,8 +1,8 @@
-import { useCapsules } from '@/hooks/useCapsules';
+import { useUserCapsules } from '@/hooks/useUserCapsules';
 import Box from '../components/Box';
 
 const Shareds = () => {
-  const { capsules } = useCapsules();
+  const { capsules } = useUserCapsules();
   return (
     <>
       <section className="p-20">
