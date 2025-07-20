@@ -95,7 +95,7 @@ export function getCapsules() {
 
 // get capsule for user
 export function getOwnCapsules(userId: string) {
-  return request<Capsule[]>('GET', `/capsules/${userId}`);
+  return request<Capsule[]>('GET', `/capsules/owner/${userId}`);
 }
 
 // get capsule for user
