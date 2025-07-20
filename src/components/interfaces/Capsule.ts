@@ -18,3 +18,8 @@ export interface CapsuleDto {
   closeDate?: string;
   CapsuleAvatar?: string;
 }
+
+export interface UserCapsules {
+  userId: string;
+  capsuleId: string;
+}
